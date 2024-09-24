@@ -1,6 +1,6 @@
-﻿using Equation.Interfaces;
+﻿using MathOrDeath_WPF.Equation.Interfaces;
 
-namespace Equation
+namespace MathOrDeath_WPF.Equation
 {
     public class EquationGenerator : IEquationGenerator
     {

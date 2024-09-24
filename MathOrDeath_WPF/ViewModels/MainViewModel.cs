@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using MathOrDeath_WPF.Equation;
 using CommunityToolkit.Mvvm.Input;
-using Equation;
 using System.Windows.Threading;
 
 namespace MathOrDeath_WPF.ViewModels
@@ -28,6 +28,8 @@ namespace MathOrDeath_WPF.ViewModels
 
         [ObservableProperty]
         private double _progress;
+
+        private int lvl = 1;
 
         public void Initialize()
         {
@@ -61,7 +63,8 @@ namespace MathOrDeath_WPF.ViewModels
             if (IsCorrect)
             {
                 Console.WriteLine("Correct!");
-                Equation = _equationGenerator.GenerateEquation(10);
+                lvl++;
+                Equation = _equationGenerator.GenerateEquation(lvl);
                 Input = string.Empty;
                 Progress = 0;
                 _timer.Stop();
@@ -76,7 +79,7 @@ namespace MathOrDeath_WPF.ViewModels
 
         public MainViewModel()
         {
-            Equation = _equationGenerator.GenerateEquation(10);
+            Equation = _equationGenerator.GenerateEquation(lvl);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Equation
+namespace MathOrDeath_WPF.Equation
 {
     class GenerateResult
     {

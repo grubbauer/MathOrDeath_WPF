@@ -1,4 +1,4 @@
-﻿namespace Equation.Interfaces
+﻿namespace MathOrDeath_WPF.Equation.Interfaces
 {
     internal interface IEquationGenerator
     {
