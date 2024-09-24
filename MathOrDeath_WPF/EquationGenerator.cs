@@ -1,8 +1,9 @@
-﻿namespace MathOrDeath_WPF
-{
-    public class EquationGenerator
-    {
+﻿using Equation.Interfaces;
 
+namespace Equation
+{
+    public class EquationGenerator : IEquationGenerator
+    {
         public string GenerateEquation(int lvl)
         {
             Random rng = new Random();

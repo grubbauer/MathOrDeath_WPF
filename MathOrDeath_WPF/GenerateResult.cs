@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace MathOrDeath_WPF
+namespace Equation
 {
     class GenerateResult
     {
@@ -9,8 +9,8 @@ namespace MathOrDeath_WPF
             Regex regex = new Regex(@"(\d+)\s*([\+\-\*/])\s*(\d+)");
             Match match = regex.Match(originalEquation);
 
-            int num1 = 0;
-            int num2 = 0;
+            double num1 = 0;
+            double num2 = 0;
             char op = ' ';
 
             if (match.Success)
@@ -43,7 +43,7 @@ namespace MathOrDeath_WPF
                     result = num1 / num2;
                     break;
             }
-            
+
 
             return result;
         }
