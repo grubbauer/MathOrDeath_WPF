@@ -35,13 +35,13 @@ namespace MathOrDeath_WPF.ViewModels
         {
             _timer = new DispatcherTimer();
             _timer.Tick += TimerTick;
-            _timer.Interval = TimeSpan.FromSeconds(1);
+            _timer.Interval = TimeSpan.FromSeconds(0.1);
             _timer.Start();
         }
 
         private void TimerTick(object? sender, EventArgs e)
         {
-            Progress += 10;
+            Progress += 1;
             if (Progress >= 100)
             {
                 System.Windows.Application.Current.Shutdown();
