@@ -1,15 +1,13 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Permissions;
-using System.Text;
-using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.Input;
 
 namespace MathOrDeath_WPF.ViewModels
 {
     public partial class MainViewModel : ObservableObject
     {
+        private EquationGenerator _equationGenerator = new EquationGenerator();
+        private GenerateResult _generateResult = new GenerateResult();
+
         [ObservableProperty]
         private string _input;
 
@@ -21,5 +19,21 @@ namespace MathOrDeath_WPF.ViewModels
 
         [ObservableProperty]
         private double _CorrectValue;
+
+        [RelayCommand]
+        private void Check()
+        {
+            if (double.TryParse(Input, out var parsedResult))
+            {
+                double result = _generateResult.getEquationResult(Equation);
+                IsCorrect = result == parsedResult;
+            }
+
+        }
+
+        public MainViewModel()
+        {
+            Equation = _equationGenerator.GenerateEquation(10);
+        }
     }
 }
